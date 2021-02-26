@@ -43,12 +43,32 @@
                                     <outletCollection property="gestureRecognizers" destination="o6U-Yg-n6X" appends="YES" id="gsI-K9-R8v"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk6-An-iCb">
+                                <rect key="frame" x="128" y="579" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rio de Janero"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVG-ul-bLW">
+                                <rect key="frame" x="133" y="731" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="Sao Paulo"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-1f-rGc">
+                                <rect key="frame" x="128" y="651" width="139" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Brasilia"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="abu-WG-TNw" id="kem-l2-luD"/>
+                        <outlet property="btnOptionOne" destination="yk6-An-iCb" id="MGQ-pq-anw"/>
+                        <outlet property="btnOptionThree" destination="XVG-ul-bLW" id="7al-dV-Llb"/>
+                        <outlet property="btnOptionTwo" destination="wjB-1f-rGc" id="YcU-P4-M8F"/>
+                        <outlet property="card" destination="M2h-2Z-dVR" id="hWn-BI-cXY"/>
                         <outlet property="frontLabel" destination="aRN-lH-cKl" id="7D4-0M-iKh"/>
                     </connections>
                 </viewController>
