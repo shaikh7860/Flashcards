@@ -34,10 +34,14 @@ class ViewController: UIViewController {
         //Rounded Corners on answer buttons
         btnOptionOne.layer.borderWidth = 3.0
         btnOptionOne.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        btnOptionOne.layer.cornerRadius = 10.0
         btnOptionTwo.layer.borderWidth = 3.0
         btnOptionTwo.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        btnOptionTwo.layer.cornerRadius = 10.0
         btnOptionThree.layer.borderWidth = 3.0
         btnOptionThree.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        btnOptionThree.layer.cornerRadius = 10.0
+       
         
 
     }
