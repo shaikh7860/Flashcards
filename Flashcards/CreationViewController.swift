@@ -13,6 +13,8 @@ class CreationViewController: UIViewController {
     
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var answerTextField: UITextField!
+    @IBOutlet weak var extraAnswerOne: UITextField!
+    @IBOutlet weak var extraAnswerTwo: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,20 @@ class CreationViewController: UIViewController {
         //Get the text in the answer text field
         let answerText = answerTextField.text
         
+        //Get the text in the extra answer text field one
+        let extraAnswer1 = extraAnswerOne.text
+        
+        //Get the text in the extra answer text field two
+        let extraAnswer2 = extraAnswerTwo.text
+        
+        //Check if empty
+        if questionText!.isEmpty || answerText!.isEmpty {
+            let alert = UIAlertController(title: "Missing Text", message: "You need to enter both a question and an answer", preferredStyle: UIAlertController.Style.alert)
+            present(alert, animated: true)
+        }
+        
         //Call the function to update the flashcard
-        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
+        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraAnswer1, extraAnswerTwo: extraAnswer2)
         
         dismiss(animated: true)
 

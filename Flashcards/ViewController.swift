@@ -55,9 +55,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateFlashcard(question: String, answer: String){
+    func updateFlashcard(question: String, answer: String, extraAnswerOne: String?, extraAnswerTwo: String?){
         frontLabel.text = question
         backLabel.text = answer
+        
+        btnOptionOne.setTitle(extraAnswerOne, for: .normal)
+        btnOptionTwo.setTitle(answer, for: .normal)
+        btnOptionThree.setTitle(extraAnswerTwo, for: .normal)
+        
     }
     
     //If button one is tappped it disappears

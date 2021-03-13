@@ -121,6 +121,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer #2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-yF-JXj">
+                                <rect key="frame" x="43" y="404" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer #1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s2Y-bQ-HSG">
+                                <rect key="frame" x="43" y="336" width="328" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WFn-r2-vPW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -139,12 +151,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answerTextField" destination="vPj-Rp-oy7" id="Dbd-I7-Wtf"/>
+                        <outlet property="extraAnswerOne" destination="s2Y-bQ-HSG" id="KVa-uU-Aqi"/>
+                        <outlet property="extraAnswerTwo" destination="rPY-yF-JXj" id="rVM-am-0ZG"/>
                         <outlet property="questionTextField" destination="ngN-T2-aKe" id="bep-6g-88f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBS-3v-9oJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="125"/>
+            <point key="canvasLocation" x="1666.6666666666667" y="124.55357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2A0-Ep-qZg">
