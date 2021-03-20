@@ -46,7 +46,7 @@ class CreationViewController: UIViewController {
         }
         
         //Call the function to update the flashcard
-        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraAnswer1, extraAnswerTwo: extraAnswer2)
+        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAnswerOne: extraAnswer1!, extraAnswerTwo: extraAnswer2!)
         
         dismiss(animated: true)
 
