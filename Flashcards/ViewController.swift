@@ -37,17 +37,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+                
         //Read Saved flashcards
         readSavedFlashacards()
-        
-        //Adding our initial flashcard if needed
-        if flashcards.count == 0{
-            updateFlashcard(question: "What's the capital of Brazil?", answer: "Brasilia", extraAnswerOne: "Rio de Janero" , extraAnswerTwo: "Sao Paolo")
-        }else{
-            updateLabels()
-            updateNextPrevButtons()
-        }
         
         //Rounded Corners to Question (Label)
         card.layer.cornerRadius = 20.0
@@ -73,13 +65,53 @@ class ViewController: UIViewController {
         //inital state of flashcard when app is launched
         //updateFlashcard(question: "What's the capital of Brazil?", answer: "Brasilia", extraAnswerOne: "Rio", extraAnswerTwo: "Sao Paulo")
     }
+    override func viewDidAppear(_ animated: Bool) {
+        //Adding our initial flashcard if needed
+        if flashcards.count == 0{
+        //updateFlashcard(question: "What's the capital of Brazil?", answer: "Brasilia", extraAnswerOne: "Rio de Janero" , extraAnswerTwo: "Sao Paolo")
+            performSegue(withIdentifier: "newFlashcard", sender: self)
+            print("flashcard0")
+        }else{
+            updateLabels()
+            updateNextPrevButtons()
+            print("flashcard1")
+        }
+    }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+        flipFlashcard()
+    }
+    
+    func flipFlashcard(){
         if(frontLabel.isHidden == true){
             frontLabel.isHidden = false
         }
         else{
             frontLabel.isHidden = true
+        }
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+                self.frontLabel.isHidden = true
+        })
+    }
+    
+    //Handles the animation of clicking from flashcard to flashcard
+    func animateCardOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            
+            self.updateLabels()
+            self.animateCardIn()
+        })
+    }
+    
+    func animateCardIn(){
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
         }
     }
     
@@ -174,6 +206,9 @@ class ViewController: UIViewController {
         btnOptionOne.isHidden = false
         btnOptionTwo.isHidden = false
         btnOptionThree.isHidden = false
+        
+        animateCardOut()
+        
     }
     
     //Prev Button
@@ -255,7 +290,7 @@ class ViewController: UIViewController {
         if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]]{
             //In here we know for sure that we have a dictionary
             let savedCards = dictionaryArray.map{ dictionary -> Flashcard in
-                return Flashcard(question: dictionary["question"] ?? "", answer: dictionary["answer"] ?? "", extraAnswer1: dictionary["extraAnswerOne"] ?? "", extraAnswer2: dictionary["extraAnswerTwo"] ?? "")
+                return Flashcard(question: dictionary["question"] ?? "", answer: dictionary["answer"] ?? "", extraAnswer1: dictionary["extra answer one"] ?? "", extraAnswer2: dictionary["extra answer two"] ?? "")
             }
             //Put all of these cards in our flashcards array
             flashcards.append(contentsOf: savedCards)
